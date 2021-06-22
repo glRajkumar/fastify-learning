@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server1": "nodemon server1",
+    "server2": "nodemon server2",
+    "server3": "nodemon server3"
   },
   "keywords": [],
   "author": "",

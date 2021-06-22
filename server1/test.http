@@ -1,0 +1,53 @@
+@host = http://127.0.0.1:3000
+
+### v1 get
+GET {{host}}/v1
+
+### v1 post 
+POST {{host}}/v1
+Content-Type: application/json
+
+{
+    "name": "Raj"
+}
+
+### v2 get 
+GET {{host}}/v2
+
+### v2 post 
+POST {{host}}/v2
+Content-Type: application/json
+
+{
+    "name": "Raj"
+}
+
+### v3 get 
+GET {{host}}/v3
+
+### v3 post 
+POST {{host}}/v3
+Content-Type: application/json
+
+{
+    "name": "Raj"
+}
+
+### v3 post2 
+POST {{host}}/v3/post2
+Content-Type: application/json
+
+{
+    "name": "Raj"
+}
+
+### v4 get 
+GET {{host}}/v4
+
+### v4 post 
+POST {{host}}/v4
+Content-Type: application/json
+
+{
+    "name": "Raj"
+}
