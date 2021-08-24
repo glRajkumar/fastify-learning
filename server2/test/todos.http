@@ -1,0 +1,34 @@
+@host =  http://127.0.0.1:3000/todos
+
+### get all todos   ? -> ?start=0&end=4
+GET {{host}}
+
+
+### get particular todo
+GET {{host}}/3
+
+
+### add todo to the todos
+POST {{host}}
+Content-Type: application/json
+
+{
+  "title": "todo 77",
+  "description": "description 12"
+}
+
+### update particular todo (?title, ?description)
+PUT {{host}}/4
+Content-Type: application/json
+
+{
+  "title": "Todo 9",
+  "description": "just hytgff text..."
+}
+
+### update particular todo archived field
+PUT {{host}}/archived/4
+
+
+### delete todos
+DELETE {{host}}/4

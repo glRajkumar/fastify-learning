@@ -26,9 +26,17 @@ const addItem = (req, reply) => {
 
 const updateItem = (req, reply) => {
     const { id } = req.params
-    const { name } = req.body
+    // const { name, value } = req.body
 
-    items = items.map((item) => (item.id === id ? { id, name } : item))
+    items = items.map((item) => {
+        if (item.id === id) {
+            return {
+                ...item,
+                ...req.body
+            }
+        }
+        return item
+    })
     item = items.find((item) => item.id === id)
 
     reply.send(item)

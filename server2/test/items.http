@@ -17,14 +17,15 @@ Content-Type: application/json
     "value": "12"
 }
 
-### update particular item
+### update particular item (?name, ?value)
 PUT {{host}}/4
 Content-Type: application/json
 
 {
-    "name": "item 3"
+    "name": "item 4 is changed to 3",
+    "value": 0
 }
 
 
-### get items
+### delete items
 DELETE {{host}}/4
