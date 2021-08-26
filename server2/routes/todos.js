@@ -16,24 +16,14 @@ const {
   deleteTodo
 } = require('../controllers/todos')
 
-function todoRoutes(fastify, options, done) {
-  // Get all todos
-  fastify.get('/', getAllTodosOpts, getAllTodos)
-
-  // Get single todos
-  fastify.get('/:id', getTodoOpts, getTodo)
-
-  // Add todo
-  fastify.post('/', addTodoOpts, addTodo)
-
-  // Update todo
-  fastify.put('/:id', updateTodoOpts, updateTodo)
-
-  // Update todo - archive field
-  fastify.put('/archived/:id', archiveTodoOpts, updateTodoArchive)
-
-  // Delete todo
-  fastify.delete('/:id', delTodoOpts, deleteTodo)
+function todoRoutes(fastify, opts, done) {
+  fastify
+    .get('/', getAllTodosOpts, getAllTodos)   // Get all todos
+    .get('/:id', getTodoOpts, getTodo)        // Get single todos
+    .post('/', addTodoOpts, addTodo)          // Add todo
+    .put('/:id', updateTodoOpts, updateTodo)  // Update todo
+    .put('/archived/:id', archiveTodoOpts, updateTodoArchive)  // Update todo - archive field
+    .delete('/:id', delTodoOpts, deleteTodo)  // Delete todo
 
   done()
 }

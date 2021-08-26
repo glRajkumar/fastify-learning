@@ -9,6 +9,7 @@ async function start() {
     try {
         let address = await app.listen(3000)
         app.log.info(`Server is running at ${address}`)
+
     } catch (error) {
         app.log.error(error)
         process.exit(1)

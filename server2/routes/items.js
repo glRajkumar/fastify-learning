@@ -5,6 +5,7 @@ const {
     updateItemOpts,
     deleteItemOpts,
 } = require('../schemas/items')
+
 const {
     getItems,
     getItem,
@@ -13,7 +14,7 @@ const {
     deleteItem,
 } = require('../controllers/items')
 
-function itemRoutes(fastify, options, done) {
+function itemRoutes(fastify, opts, done) {
     // Get all items
     fastify.get('/', getItemsOpts, getItems)
 
