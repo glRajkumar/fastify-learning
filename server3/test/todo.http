@@ -1,5 +1,5 @@
 @host =  http://127.0.0.1:3000/todos
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTMxYzI1NGM1Yjg0YzQ1MjRkMjQ4YjQiLCJpYXQiOjE2MzA2NTI4MTUsImV4cCI6MTYzMDcxNzYxNX0.03e9wnRcjD9eXLmNoDect7v_jr1LluurGVHYTa_YvPU
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTMyZDAxOWVmZjJlOGIzZTI4OTJmMjciLCJpYXQiOjE2MzA3MjEwMjUsImV4cCI6MTYzMDc4NTgyNX0.3-QFOntgsZsULMuQrSycD8Hbn3mDU8L2fH_w0gMV73k
 
 ### get all todos
 GET {{host}}
@@ -7,7 +7,7 @@ Authorization: {{token}}
 
 
 ### get todo by particular id
-GET {{host}}/findbyid/6131c7531cf6ca8d7a8db41b
+GET {{host}}/findbyid/6132d423d76fe92514cdd784
 Authorization: {{token}}
 
 
@@ -22,8 +22,8 @@ Authorization: {{token}}
 Content-Type: application/json
 
 {
-  "title" : "Title2",
-  "description": "description2"
+  "title" : "Title3",
+  "description": "description3"
 }
 
 
@@ -33,7 +33,7 @@ Authorization: {{token}}
 Content-Type: application/json
 
 {
-  "id": "6131c7531cf6ca8d7a8db41b",
+  "id": "6132d58176e2384713696391",
   "title" : "Raj updated",
   "description": "description updated"
 }
@@ -45,7 +45,7 @@ Authorization: {{token}}
 Content-Type: application/json
 
 {
-  "id": "6131c7531cf6ca8d7a8db41b"
+  "id": "6132d423d76fe92514cdd784"
 }
 
 
@@ -55,5 +55,5 @@ Authorization: {{token}}
 Content-Type: application/json
 
 {
-  "id": "6131c7531cf6ca8d7a8db41b"
+  "id": "6132d58176e2384713696391"
 }

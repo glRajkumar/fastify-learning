@@ -1,11 +1,10 @@
-// const {
-//   getAllTodosOpts,
-//   getTodoOpts,
-//   addTodoOpts,
-//   updateTodoOpts,
-//   archiveTodoOpts,
-//   delTodoOpts
-// } = require('../schemas/todos')
+const {
+  getTodosSchema,
+  findTodoByIdSchema,
+  createTodoSchema,
+  updateTodoSchema,
+  idInBodySchema
+} = require('../schema/todo')
 
 const {
   getAllTodos,
@@ -21,13 +20,13 @@ function todoRoutes(fastify, opts, done) {
   fastify.addHook("preHandler", async (req, res) => fastify.auth(req, res))
 
   fastify
-    .get('/', getAllTodos)
-    .get('/findbyid/:id', findTodoById)
-    .get('/finished', finishedTodos)
-    .post('/', createTodo)
-    .put('/', updateTodo)
-    .put('/archive', archiveTodo)
-    .delete('/', deleteTodo)
+    .get('/', getTodosSchema, getAllTodos)
+    .get('/findbyid/:id', findTodoByIdSchema, findTodoById)
+    .get('/finished', getTodosSchema, finishedTodos)
+    .post('/', createTodoSchema, createTodo)
+    .put('/', updateTodoSchema, updateTodo)
+    .put('/archive', idInBodySchema, archiveTodo)
+    .delete('/', idInBodySchema, deleteTodo)
 
   done()
 }

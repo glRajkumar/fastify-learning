@@ -11,8 +11,8 @@ const envSchema = {
 const envOptions = {
   confKey: 'config',
   schema: envSchema,
-  // dotenv: true,
-  // data: process.env
+  dotenv: true,
+  data: process.env
 }
 
 module.exports = envOptions

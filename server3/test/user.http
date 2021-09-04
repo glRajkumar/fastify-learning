@@ -1,14 +1,14 @@
 @host =  http://127.0.0.1:3000/users
 
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTMxYzI1NGM1Yjg0YzQ1MjRkMjQ4YjQiLCJpYXQiOjE2MzA2NTI4MTUsImV4cCI6MTYzMDcxNzYxNX0.03e9wnRcjD9eXLmNoDect7v_jr1LluurGVHYTa_YvPU
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTMyZDAxOWVmZjJlOGIzZTI4OTJmMjciLCJpYXQiOjE2MzA3MjAwMjgsImV4cCI6MTYzMDc4NDgyOH0.ZG4K3S_XziVTA95xpPP7GEWbgRbY4Bno7DZXTfTc46o
 
 ### register
 POST {{host}}/register
 Content-Type: application/json
 
 {
-  "name" : "newName",
-  "email": "newName@gmail.com",
+  "name" : "Rajkumar",
+  "email": "passwordRaj@gmail.com",
   "password": "aA1!aa"
 }
 

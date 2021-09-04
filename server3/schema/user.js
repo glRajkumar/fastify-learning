@@ -1,4 +1,3 @@
-const bool = { type: 'boolean' }
 const str = { type: 'string' }
 
 const registerSchema = {
@@ -41,7 +40,16 @@ const loginSchema = {
 
 const meSchema = {
   schema: {
-
+    response: {
+      200: {
+        type: 'object',
+        properties: {
+          _id: str,
+          name: str,
+          email: str
+        }
+      },
+    }
   }
 }
 
@@ -51,4 +59,11 @@ const logoutSchema = {
       200: str,
     },
   }
+}
+
+module.exports = {
+  registerSchema,
+  loginSchema,
+  meSchema,
+  logoutSchema
 }

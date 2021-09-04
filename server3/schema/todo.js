@@ -4,7 +4,7 @@ const bool = { type: 'boolean' }
 const todo = {
   type: 'object',
   properties: {
-    id: str,
+    _id: str,
     title: str,
     description: str,
     creator: str,
@@ -17,7 +17,8 @@ const arrOfTodos = {
   items: todo
 }
 
-const getAllTodosSchema = {
+// for both get all and get archived
+const getTodosSchema = {
   schema: {
     response: {
       200: arrOfTodos
@@ -30,17 +31,9 @@ const findTodoByIdSchema = {
     params: {
       type: 'object',
       properties: {
-        id: { type: 'string' },
+        id: str,
       }
     },
-    response: {
-      200: todo
-    }
-  }
-}
-
-const finishedTodosSchema = {
-  schema: {
     response: {
       200: arrOfTodos
     }
@@ -80,7 +73,8 @@ const updateTodoSchema = {
   }
 }
 
-const archiveTodoSchema = {
+// for archiving and deleting todo
+const idInBodySchema = {
   schema: {
     body: {
       type: 'object',
@@ -95,17 +89,10 @@ const archiveTodoSchema = {
   }
 }
 
-const deleteTodoSchema = {
-  schema: {
-    body: {
-      type: 'object',
-      required: ['id'],
-      properties: {
-        id: str
-      },
-    },
-    response: {
-      200: str,
-    },
-  }
+module.exports = {
+  getTodosSchema,
+  findTodoByIdSchema,
+  createTodoSchema,
+  updateTodoSchema,
+  idInBodySchema
 }
