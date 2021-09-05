@@ -1,0 +1,33 @@
+@host =  http://127.0.0.1:3000/users
+
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTMyZDAxOWVmZjJlOGIzZTI4OTJmMjciLCJpYXQiOjE2MzA4MDUzNzEsImV4cCI6MTYzMDg3MDE3MX0.khpGkmZMr3i0--Bz9oxz8jkOayryNdhiQ-gd9-2WbLw
+
+### register
+POST {{host}}/register
+Content-Type: application/json
+
+{
+  "name" : "Rajkumar",
+  "email": "passwordRaj@gmail.com",
+  "password": "aA1!aa"
+}
+
+
+### login
+POST {{host}}/login
+Content-Type: application/json
+
+{
+  "email": "passwordRaj@gmail.com",
+  "password": "aA1!aa"
+}
+
+
+### user details
+GET {{host}}/me
+Authorization: {{token}}
+
+
+### logout
+POST {{host}}/logout
+Authorization: {{token}}

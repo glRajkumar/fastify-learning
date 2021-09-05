@@ -1,0 +1,59 @@
+@host =  http://127.0.0.1:3000/todos
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTMyZDAxOWVmZjJlOGIzZTI4OTJmMjciLCJpYXQiOjE2MzA3MjEwMjUsImV4cCI6MTYzMDc4NTgyNX0.3-QFOntgsZsULMuQrSycD8Hbn3mDU8L2fH_w0gMV73k
+
+### get all todos
+GET {{host}}
+Authorization: {{token}}
+
+
+### get todo by particular id
+GET {{host}}/findbyid/6132d423d76fe92514cdd784
+Authorization: {{token}}
+
+
+### get all archived todos
+GET {{host}}/finished
+Authorization: {{token}}
+
+
+### add new todo
+POST {{host}}
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "title" : "Title3",
+  "description": "description3"
+}
+
+
+### update partiular todo
+PUT {{host}}
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "id": "6132d58176e2384713696391",
+  "title" : "Raj updated",
+  "description": "description updated"
+}
+
+
+### archive a todo
+PUT {{host}}/archive
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "id": "6132d423d76fe92514cdd784"
+}
+
+
+### delete a todo
+DELETE {{host}}
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "id": "6132d58176e2384713696391"
+}
