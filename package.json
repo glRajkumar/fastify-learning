@@ -6,7 +6,8 @@
   "scripts": {
     "server1": "nodemon server1",
     "server2": "nodemon server2",
-    "server3": "nodemon server3"
+    "server3": "nodemon server3",
+    "server4": "nodemon server4"
   },
   "keywords": [],
   "author": "",
