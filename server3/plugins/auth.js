@@ -17,7 +17,7 @@ async function auth(fastify) {
         req.user = user
         req.token = token
 
-        return req
+        // return req
 
       } else {
         return res.code(401).send("Issue with token")
