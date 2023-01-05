@@ -2,12 +2,18 @@ const fastify = require('fastify')
 const fp = require('fastify-plugin')
 
 const envOptions = require('./schema/env')
-const connectDb = require('./plugins/connectDb')
+// const connectDb = require('./plugins/connectDb')
 
 const app = fastify()
 // { logger: true }
 
-connectDb()
+// connectDb()
+
+async function dbConnector(fastify, opts) {
+  fastify.register(require('fastify-mongodb'), {
+    url: 'mongodb://localhost:27017/test1'
+  })
+}
 
 async function authenticator(fastify) {
   fastify.register(require('fastify-jwt'), {
@@ -18,6 +24,7 @@ async function authenticator(fastify) {
 app
   .register(require('fastify-env'), envOptions)
   .register(require('fastify-cors'))
+  .register(fp(dbConnector))
   .register(fp(authenticator))
   .register(fp(require('./plugins/auth')))
   // apis
